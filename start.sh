@@ -10,7 +10,7 @@
 export ANTHROPIC_BASE_URL="https://api.z.ai/api/anthropic"
 
 # 认证 Token（替换为你自己的 Token）
-export ANTHROPIC_AUTH_TOKEN="your-token-here"
+export ANTHROPIC_AUTH_TOKEN="your-token"
 
 # === 端口配置 ===
 PORT="${1:-3000}"
