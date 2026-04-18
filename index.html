@@ -415,6 +415,8 @@
     <button class="time-preset active" onclick="setPreset('24h',this)">24h</button>
     <button class="time-preset" onclick="setPreset('7d',this)">7d</button>
     <button class="time-preset" onclick="setPreset('30d',this)">30d</button>
+    <button class="time-preset" onclick="setPreset('today',this)">Today</button>
+    <button class="time-preset" onclick="setPreset('month',this)">This Month</button>
   </div>
 
   <div class="error-banner" id="errorBanner" style="display:none"></div>
@@ -573,6 +575,8 @@ function setPreset(p, btn) {
     case '12h': start = new Date(now-12*3600000); break;
     case '7d': start = new Date(now.getFullYear(), now.getMonth(), now.getDate()-7, now.getHours(), 0, 0); break;
     case '30d': start = new Date(now.getFullYear(), now.getMonth()-1, now.getDate(), now.getHours(), 0, 0); break;
+    case 'today': start = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0); break;
+    case 'month': start = new Date(now.getFullYear(), now.getMonth(), 1, 0, 0, 0); break;
     default: { const d = defaultRange(); start = d.start; }
   }
   document.getElementById('startTime').value = toLocal(start);
